@@ -1,0 +1,2 @@
+# app-publish
+publish verify
