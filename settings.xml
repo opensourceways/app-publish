@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups>
+    </pluginGroups>
+
+    <proxies>
+    </proxies>
+
+    <!-- servers
+     | This is a list of authentication profiles, keyed by the server-id used within the system.
+     | Authentication profiles can be used whenever maven must make a connection to a remote server.
+     |-->
+    <servers>
+        <server>
+            <id>releases</id>
+            <username>ee23073a7dfc4c4f9cdc1b056c24217b_0cd1b20fdd80f34c1fb1c0018f716748</username>
+            <password>K9u-=Kv10_</password>
+        </server>
+        <server>
+            <id>snapshots</id>
+            <username>ee23073a7dfc4c4f9cdc1b056c24217b_0cd1b20fdd80f34c1fb1c0018f716748</username>
+            <password>K9u-=Kv10_</password>
+        </server>
+        <!--        <server>-->
+        <!--            <id>z_mirrors</id>-->
+        <!--        </server>-->
+    </servers>
+
+
+        <mirrors>
+<!--            <mirror>-->
+<!--                <id>z_mirrors</id>-->
+<!--                <mirrorOf>*,!releases,!snapshots</mirrorOf>-->
+<!--                <url>https://repo.huaweicloud.com/repository/maven/</url>-->
+<!--            </mirror>-->
+<!--            <mirror>-->
+<!--                <id>huaweicloud</id>-->
+<!--                <mirrorOf>*,!HuaweiCloudSDK</mirrorOf>-->
+<!--                <url>https://mirrors.huaweicloud.com/repository/maven/huaweicloudsdk</url>-->
+<!--            </mirror>-->
+            <mirror>
+                <id>alimaven</id>
+                <mirrorOf>central</mirrorOf>
+                <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            </mirror>
+        </mirrors>
+
+    <profiles>
+        <profile>
+            <id>kunpeng</id>
+            <!-- 远程仓库列表，将华为鲲鹏 Maven 仓库放在最前面 -->
+            <repositories>
+                <repository>
+                    <id>kunpengmaven</id>
+                    <name>kunpeng maven</name>
+                    <url>https://repo.huaweicloud.com/kunpeng/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <!-- 其他 repository，配置其他Maven中央仓库，以华为云Maven为例 -->
+                <repository>
+                    <id>huaweicloud</id>
+                    <name>huaweicloud maven</name>
+                    <url>https://repo.huaweicloud.com/repository/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <!-- 激活上面的profile -->
+    <activeProfiles>
+        <activeProfile>kunpeng</activeProfile>
+    </activeProfiles>
+
+    <!--    <activeProfiles>-->
+    <!--        <activeProfile>MyProfile</activeProfile>-->
+    <!--        <activeProfile>MyProfile2</activeProfile>-->
+    <!--    </activeProfiles>-->
+<!--    <localRepository>C:\Program Files\Java\apache-maven-3.6.3\repository</localRepository>-->
+</settings>
