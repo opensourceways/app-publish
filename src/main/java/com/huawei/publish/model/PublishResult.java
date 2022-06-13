@@ -2,6 +2,9 @@ package com.huawei.publish.model;
 
 import java.util.List;
 
+/**
+ * publish request result
+ */
 public class PublishResult {
     private String message;
     private String result;
