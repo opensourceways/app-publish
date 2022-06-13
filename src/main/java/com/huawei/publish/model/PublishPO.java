@@ -11,7 +11,7 @@ public class PublishPO {
     private String rpmKey;
     private String fileKey;
     private String tempDir;
-    private String conflict = "skip";//skip/overwrite/error
+    private String conflict = "skip";//normal/skip/overwrite/error
     List<FilePO> files;
     private List<RepoIndex> repoIndexList;
 
