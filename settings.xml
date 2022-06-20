@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups>
+    </pluginGroups>
+    <proxies>
+    </proxies>
+        <mirrors>
+            <mirror>
+                <id>alimaven</id>
+                <mirrorOf>central</mirrorOf>
+                <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            </mirror>
+        </mirrors>
+    <profiles>
+        <profile>
+            <id>kunpeng</id>
+            <repositories>
+                <repository>
+                    <id>kunpengmaven</id>
+                    <name>kunpeng maven</name>
+                    <url>https://repo.huaweicloud.com/kunpeng/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>huaweicloud</id>
+                    <name>huaweicloud maven</name>
+                    <url>https://repo.huaweicloud.com/repository/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>kunpeng</activeProfile>
+    </activeProfiles>
+</settings>
